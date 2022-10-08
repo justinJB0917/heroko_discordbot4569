@@ -47,8 +47,11 @@ async def on_message(message):
       
       tmp = message.content.split(" ",2)
       
-        await message.delete()
+    if len(tmp) ==1:
+        await messagechannel.send("語法錯誤")
+        else:
         await message.channel.send(tmp[1])
+        
     if message.content.startwith('更改狀態'):
         tmp = message.content.split(" ",2)
 

@@ -63,16 +63,6 @@ async def on_message(message):
             game = discord.Game(tmp[1])       
             await client.change_presence(status=discord.Status.idle, activity=game)
 
-@client.event
-
-async def on_message(message):
-
-    if message.author == client.user:
-        return
-
-    if message.content.startwith('說'):
-        await asyncio.sleep(3)
-        await message.delete()
 
         
 

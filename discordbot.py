@@ -41,10 +41,14 @@ async def on_message(message):
     if message.author == client.user:
         return
     #如果包含 ping，機器人回傳 pong
-    if message.content == 'ping':
-        await message.channel.send('pong')
-    if message.content == 'test':
-        await message.channel.send('test')    
+    if message.content == '嗨':
+        await message.channel.send('閉嘴好嗎')
+    if message.content == '哈囉':
+        await message.channel.send('閉嘴啦吵死了')  
+    if message.content == 'Hi' or 'HI' or 'hi':
+        await message.channel.send('HI屁')
+    if message.content == '好哦':
+        await message.channel.send('閉嘴啦誰說好了')    
 
 # Bot起動
 client.run(TOKEN)

@@ -49,7 +49,8 @@ async def on_message(message):
       if len(tmp) == 1:
         await message.channel.send("要讓我說話嗎 你想要我說什麼？")
       else:
-        await message.channel.send(tmp[1])
+        
+        await message.channel.send("test")
     if message.content.startwith('更改狀態'):
         x = message.content.split(" ",2)
 

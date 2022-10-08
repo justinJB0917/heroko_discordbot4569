@@ -42,7 +42,9 @@ async def on_message(message):
         return
     #如果包含 ping，機器人回傳 pong
     if message.content == 'ping':
-        await message.channel.send('pong')            
+        await message.channel.send('pong')
+    if message.content == 'test':
+        await message.channel.send('test')    
 
 # Bot起動
 client.run(TOKEN)

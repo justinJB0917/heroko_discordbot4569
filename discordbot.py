@@ -12,7 +12,10 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('成功登入')
+    print('目前登入身份：',client.user)
+    game = discord.Game('LOL')
+    
+    await client.change_presence(status=discord.Status.idle, activity=game)
 
 
 @client.event

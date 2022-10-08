@@ -44,14 +44,13 @@ async def on_message(message):
         return
     
     if message.content.startswith('說'):
-      
       tmp = message.content.split(" ",2)
       
-    if len(tmp) == 1:
-        await messagechannel.send("語法錯誤")
+       if len(tmp) == 1:
+          await message.channel.send("語法錯誤")
         else:
-        await message.channel.send(tmp[1])
-        await message.delete()
+             await message.channel.send(tmp[1])
+             await message.delete()
         
     if message.content.startwith('更改狀態'):
         tmp = message.content.split(" ",2)

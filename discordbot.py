@@ -33,6 +33,24 @@ async def on_message(message):
         if translator.detect(content).lang == SRCLanguage or SRCLanguage == '':
             remessage = translator.translate(content, dest='zh-tw').text
             await message.reply(remessage) 
+
+
+@client.event
+
+async def on_message(message):
+    
+    if message.author == client.user:
+        return
+    
+    if message.content.startswith('說'):
+      
+      tmp = message.content.split(" ",2)
+      
+      if len(tmp) == 1:
+        await message.channel.send("要讓我說話嗎 你想要我說什麼？")
+      else:
+        await message.channel.send(tmp[1])
+         
             
 @client.event
 

@@ -4,6 +4,7 @@ import discord
 import googletrans
 import os
 from pprint import pprint
+import asyncio
 
 TOKEN = os.environ['TOKEN']
 SRCLanguage=os.environ['SRC']
@@ -46,10 +47,12 @@ async def on_message(message):
     
     if message.content.startswith('說'):
       tmp = message.content.split(" ",2)
+      your_message = message.content
       if len(tmp) == 1:
         await message.channel.send("要讓我說話嗎 你想要我說什麼？")
       else:
         await message.channel.send(tmp[1])
+        await your_message.delete()
 
     if message.content.startwith('更改狀態'):
         x = message.content.split(" ",2)
@@ -68,7 +71,8 @@ async def on_message(message):
         return
 
     if message.content.startwith('說'):
-        await message.delete(message)
+        await asyncio.sleep(3)
+        await message.delete()
 
         
 

@@ -15,7 +15,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    print('成功登入')
+    print('成功登入 登入身份：', client.user)
     game = discord.Game('Twitch 並觀賞Namin的直播')
     await client.change_presence(status=discord.Status.idle, activity=game)
 

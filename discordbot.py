@@ -37,7 +37,7 @@ async def on_message(message):
         await message.delete()
 
         await message.channel.send(tmp[1])
-        print(client.user, '發送了', tmp[1])
+        print(client.user, '發送了', tmp[1], user)
 
     if message.content == 'GG人':
         await message.delete()

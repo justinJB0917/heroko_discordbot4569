@@ -1,6 +1,7 @@
 from distutils.command.clean import clean
 from email import message, message_from_binary_file
 from pyexpat.errors import messages
+from telnetlib import STATUS
 import discord
 import googletrans
 import os
@@ -52,6 +53,22 @@ async def on_message(message):
         await message.channel.send("要讓我說話嗎 你想要我說什麼？")
       else:
         await message.channel.send(tmp[1])
-   
+
+
+@client.event
+
+async def on_message(message):
+    
+    if message.author == client.user:
+        return
+    
+    if message.content == '嗨':
+        await message.channel.send('嗨智障')
+
+    
+client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="namin's streaming"))
+
+
+        
 
 client.run(TOKEN)

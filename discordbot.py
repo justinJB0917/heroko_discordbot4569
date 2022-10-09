@@ -3,10 +3,8 @@ from email import message, message_from_binary_file
 from pyexpat.errors import messages
 from telnetlib import STATUS
 import discord
-import googletrans
 import os
 from pprint import pprint
-import asyncio
 
 TOKEN = os.environ['TOKEN']
 SRCLanguage=os.environ['SRC']
@@ -37,16 +35,21 @@ async def on_message(message):
         await message.channel.send("要讓我說話嗎 你想要我說什麼？")
       else:
         await message.delete()
-        
+
         await message.channel.send(tmp[1])
 
     if message.content == 'GG人':
         await message.delete()
         await message.channel.send("<你的訊息已被撤回>")
 
+    if message.content == '機器人':
+        await message.delete()
+        await message.channel.send("<你的訊息已被撤回>")
+
+    if message.content == '這裡的觀眾都是機器人嗎':
+        await message.delete()
+        await message.channel.send("<你已遭到 管理員Relaxing234的永久禁言>")
+
     
-
-
-        
 
 client.run(TOKEN)

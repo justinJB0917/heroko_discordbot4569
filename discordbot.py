@@ -1,5 +1,6 @@
 from distutils.command.clean import clean
-from email import message_from_binary_file
+from email import message, message_from_binary_file
+from pyexpat.errors import messages
 import discord
 import googletrans
 import os
@@ -47,21 +48,24 @@ async def on_message(message):
     
     if message.content.startswith('說'):
       tmp = message.content.split(" ",2)
-      your_message = message.content
       if len(tmp) == 1:
         await message.channel.send("要讓我說話嗎 你想要我說什麼？")
       else:
-        await message.channel.send(tmp[1])
-        await message.delete(your_message)
+        await message.channel(905434106966454322).send(tmp[1])
 
-    if message.content.startwith('更改狀態'):
-        x = message.content.split(" ",2)
 
-        if len(x) == 1:
-            await message.channel.send("你要改什麼") 
-        else:
-            game = discord.Game(tmp[1])       
-            await client.change_presence(status=discord.Status.idle, activity=game)
+@client.event
+
+async def on_message(message):
+    
+    if message.author == client.user:
+        return
+    
+    if message.content == '嗨':
+        await message.channel(905434106966454322).send('嗨智障')
+
+    
+
 
 
         

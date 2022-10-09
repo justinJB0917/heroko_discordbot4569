@@ -52,13 +52,13 @@ async def on_message(message):
         await message.channel.send("要讓我說話嗎 你想要我說什麼？")
       else:
         await message.channel.send(tmp[1])
-        await your_message.delete()
+        await message.delete(your_message)
 
     if message.content.startwith('更改狀態'):
         x = message.content.split(" ",2)
 
         if len(x) == 1:
-            await message.channel.send("你要改什麼你要說啊") 
+            await message.channel.send("你要改什麼") 
         else:
             game = discord.Game(tmp[1])       
             await client.change_presence(status=discord.Status.idle, activity=game)

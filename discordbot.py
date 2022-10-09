@@ -39,7 +39,7 @@ async def on_message(message):
         await message.channel.send(tmp[1])
         print(client.user, '發送了', tmp[1],)
 
-   if message.content == 'GG人':
+    if message.content == 'GG人':
         await message.delete()
         await message.channel.send("<你的訊息已被撤回>")
         print(client.user, '撤回了一則訊息', '內容：','(GG人)')

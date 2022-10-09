@@ -52,22 +52,6 @@ async def on_message(message):
         await message.channel.send("要讓我說話嗎 你想要我說什麼？")
       else:
         await message.channel.send(tmp[1])
-
-
-@client.event
-
-async def on_message(message):
-    
-    if message.author == client.user:
-        return
-    
-    if message.content == '嗨':
-        await message.channel.send('嗨智障')
-
-    
-
-
-
-        
+   
 
 client.run(TOKEN)

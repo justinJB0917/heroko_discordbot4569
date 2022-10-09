@@ -18,26 +18,10 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print('成功登入')
+    game = discord.Game('Namin_streaming')
+    await client.change_presence(status=discord.Status.idle, activity=game)
 
 
-@client.event
-async def on_message(message):
-    
-    if message.author.bot:
-        return
-    
-    if client.user in message.mentions: 
-        translator = googletrans.Translator()
-        robotName = client.user.name
-        first, space, content = message.clean_content.partition('@'+robotName+' ')
-        
-        if content == '':
-            content = first
-        if translator.detect(content).lang == DSTLanguage:
-            return
-        if translator.detect(content).lang == SRCLanguage or SRCLanguage == '':
-            remessage = translator.translate(content, dest='zh-tw').text
-            await message.reply(remessage) 
 
 
 @client.event
@@ -66,7 +50,6 @@ async def on_message(message):
         await message.channel.send('嗨智障')
 
     
-client.change_presence(status=discord.Status.idle, activity=discord.Activity(type=discord.ActivityType.watching, name="namin's streaming"))
 
 
         

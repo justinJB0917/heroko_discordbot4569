@@ -39,17 +39,19 @@ async def on_message(message):
         await message.channel.send(tmp[1])
         print(client.user, '發送了', tmp[1],)
 
-    if message.content == 'GG人':
+   if message.content == 'GG人':
         await message.delete()
         await message.channel.send("<你的訊息已被撤回>")
+        print(client.user, '撤回了一則訊息', '內容：','(GG人)')
 
     if message.content == '機器人':
         await message.delete()
         await message.channel.send("<你的訊息已被撤回>")
-
+        print(client.user, '撤回了一則訊息', '內容：','(機器人)')
     if message.content == '這裡的觀眾都是機器人嗎':
         await message.delete()
         await message.channel.send("<你已遭到 管理員Relaxing234的永久禁言>")
+        print(client.user, '撤回了一則訊息', '內容：','(這裡的觀眾都是機器人嗎)')
 
     
 

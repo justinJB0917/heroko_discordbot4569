@@ -38,6 +38,9 @@ async def on_message(message):
       else:
         await message.channel.send(tmp[1])
 
+    if message.content == 'GG人':
+        await message.delete()
+        await message.channel.send("<你的訊息已被撤回>")
 
     
 

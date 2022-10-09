@@ -51,7 +51,7 @@ async def on_message(message):
       if len(tmp) == 1:
         await message.channel.send("要讓我說話嗎 你想要我說什麼？")
       else:
-        await message.channel(905434106966454322).send(tmp[1])
+        await message.channel.send(tmp[1])
 
 
 @client.event
@@ -62,7 +62,7 @@ async def on_message(message):
         return
     
     if message.content == '嗨':
-        await message.channel(905434106966454322).send('嗨智障')
+        await message.channel.send('嗨智障')
 
     
 

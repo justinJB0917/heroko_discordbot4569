@@ -39,16 +39,6 @@ async def on_message(message):
         await message.channel.send(tmp[1])
 
 
-@client.event
-
-async def on_message(message):
-    
-    if message.author == client.user:
-        return
-    
-    if message.content == '嗨':
-        await message.channel.send('嗨智障')
-
     
 
 

@@ -76,6 +76,18 @@ async def on_message(message):
         print(client.user, '觸發了26號彩蛋')
     #-----------------------------------------------------------------------------------------------#
 
+
+
+
+
+@client.event
+async def on_member_join(member):
+    print(F'{member}join!')
     
+
+
+@client.event
+async def on_member_remove(member):
+    print(F'{member}leave!')
 
 client.run(TOKEN)

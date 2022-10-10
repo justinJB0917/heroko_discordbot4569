@@ -77,19 +77,7 @@ async def on_message(message):
         print(client.user, '觸發了26號彩蛋')
     
 
-@client.event
 
-async def on_member_join(member):
-
-channel = client.get_channel(1028857081593340004)
-await channel.send(F'{member}joined')
-
-@client.event
-
-async def on_member_remove(member)
-
-channel = client.get_channel(1028858150457184260)
-await channel.send(F'{member}left')
 
 
     

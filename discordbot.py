@@ -74,7 +74,7 @@ async def on_message(message):
         print(client.user, '觸發了10號彩蛋')
     if message.content == '禿頭怪人':
         await message.channel.send("觸發彩蛋 送你一張照片:)  https://ibb.co/k8T7sBb")
-        print(client.user, '觸發了26號彩蛋test')
+        print(client.user, '觸發了26號彩蛋')
     
 
     

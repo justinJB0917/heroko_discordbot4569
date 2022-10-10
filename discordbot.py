@@ -17,7 +17,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print('成功登入')
-    game = discord.Game('vscode 我也想擁有智慧')
+    game = discord.Game('未發佈的GTA VI')
     await client.change_presence(status=discord.Status.idle, activity=game)
 #===================================================================================================#
 #===================================================================================================#

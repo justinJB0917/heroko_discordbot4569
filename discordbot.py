@@ -79,7 +79,7 @@ async def on_message(message):
 
 @client.event
 
-async def on_member_join(member)
+async def on_member_join(member):
 print(F'{member}joined!')
 channel = client.get_channel(1028857081593340004)
 await channel.send(F'{member}joined')
